@@ -25,8 +25,8 @@ public class FlowDriver {
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(FlowBean.class);
 		// 5、设置输入输出目录
-		FileInputFormat.setInputPaths(job, new Path(args[0]));
-		FileOutputFormat.setOutputPath(job, new Path(args[1]));
+		FileInputFormat.setInputPaths(job, new Path("D:\\project\\my_project\\input_data\\11_input\\inputflow"));
+		FileOutputFormat.setOutputPath(job, new Path("D:\\project\\my_project\\output_data\\flow"));
 
 		// 6、执行
 		boolean b = job.waitForCompletion(true);

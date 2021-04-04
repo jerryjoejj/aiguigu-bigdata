@@ -8,10 +8,16 @@ import java.io.IOException;
 
 public class FlowBean implements Writable {
 
+	// 上行流量
 	private long upFlow;
+	// 下行流量
 	private long downFlow;
+	// 总流量
 	private long sumFlow;
 
+	/**
+	 *  空参构造
+	 */
 	public FlowBean() {
 	}
 
