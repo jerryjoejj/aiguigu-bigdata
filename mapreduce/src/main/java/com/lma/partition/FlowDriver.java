@@ -1,4 +1,4 @@
-package com.lma.flow;
+package com.lma.partition;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -24,9 +24,12 @@ public class FlowDriver {
 		job.setMapOutputValueClass(FlowBean.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(FlowBean.class);
+
+		job.setPartitionerClass(MyPartitioner.class);
+		job.setNumReduceTasks(5);
 		// 5、设置输入输出目录
 		FileInputFormat.setInputPaths(job, new Path("D:\\project\\my_project\\input_data\\11_input\\inputflow"));
-		FileOutputFormat.setOutputPath(job, new Path("D:\\project\\my_project\\output_data\\flow7"));
+		FileOutputFormat.setOutputPath(job, new Path("D:\\project\\my_project\\output_data\\flow11"));
 
 		// 6、执行
 		boolean b = job.waitForCompletion(true);
