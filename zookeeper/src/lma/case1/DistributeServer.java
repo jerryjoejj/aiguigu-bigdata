@@ -1,6 +1,6 @@
 package lma.case1;
 
-import org.apache.zookeeper.KeeperException;
+import org.apache.zookeeper.*;
 
 import java.io.IOException;
 

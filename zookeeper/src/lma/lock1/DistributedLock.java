@@ -1,6 +1,6 @@
 package lma.lock1;
 
-import org.apache.zookeeper.KeeperException;
+import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class DistributedLock {
 			@Override
 			public void process(WatchedEvent watchedEvent) {
 				// 连接建立，唤醒线程
-				if (watchedEvent.getState() == Event.KeeperState.SyncConnected) {
+				if (watchedEvent.getState() == Watcher.Event.KeeperState.SyncConnected) {
 					connectLatch.countDown();
 				}
 				// 节点删除，唤醒等待线程

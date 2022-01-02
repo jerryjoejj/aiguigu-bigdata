@@ -1,5 +1,6 @@
 package lma.zookeepertest;
 
+import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 import org.junit.Before;
 import org.junit.Test;
